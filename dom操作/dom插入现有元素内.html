@@ -1,0 +1,29 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jquery中的class属性</title>
+	<script src="../script/jquery.js"></script>
+	<style>
+	   
+	</style>
+</head>
+<body>
+   <!--append,appendTo,html,prepend,prependTo,text-->
+    <h2>Greetings</h2>
+	<div class="container">
+	  <div class="inner">Hello</div>
+	  <div class="inner">Goodbye</div>
+	</div>
+
+<script>
+	$(".inner").append("<p>nihao</p>");
+	$("<p>nihao111</p>").appendTo(".container");
+	$(".inner").click(function(e){
+		var html=$(this).html();//html会返回html标签和内容
+		var text=$(this).text();//text只会返回内容
+		console.log(html);
+		console.log(text);
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jquery中的class属性</title>
+	<script src="../script/jquery.js"></script>
+	<style>
+	   .selected{ color:blue;}	
+	   .test{color:red;}
+	   .test3{color:green;}
+	   .foo{color:yellow;}
+	   .highlight{ color:pink;}
+	</style>
+</head>
+<body>
+   <!--
+     addClass(className)
+     removeClass(className);
+     hasClass(className);
+     toggleClass(className);//在匹配的元素集合中的每个元素上添加或删除一个或多个样式类,取决于这个样式类是否存在或值切换属性。即：如果存在（不存在）就删除（添加）一个类。
+     clone()方法深度复制所有匹配的元素集合
+
+     className:要查询的样式名称
+   -->
+	<div>
+		<p>
+			我要添加一个class属性哦
+		</p>
+		<p>
+			我要添加一个class属性哦111
+		</p>
+		<p class="test3">
+			我要添加一个class属性哦222
+		</p>
+		<p>
+			我要添加一个class属性哦3333
+		</p>
+		<p class="foo">
+			我要添加一个class属性哦foo
+		</p>
+	</div>
+	<div class="container">
+        <div class="goodbye">
+          <div class="hello">Hello 你好</div>
+       </div>
+    </div>
+
+<script>
+	$("p").addClass("selected");
+	$("p").last().addClass("test");
+	$("p").removeClass("test3"); //移除样式
+	if($("p").hasClass("foo")){
+       // alert($("p.foo").text());
+	}
+
+	$("p").click(function(){
+		 $(this).toggleClass("highlight");
+	})
+
+	 $(".goodbye").append($(".hello").clone());
+     $(".hello").clone().appendTo(".container");
+</script>
+</body>
+</html>
